@@ -1,4 +1,4 @@
-# dva-pwa
+# Dva-PWA
 A PWA starter powered by [dva](https://github.com/dvajs/dva) and base on [pwa](https://github.com/lukeed/pwa).
 
 ## Installation
@@ -13,6 +13,20 @@ cd dva-pwa
 
 ```bash
 yarn
+```
+
+## Run & Build
+
+```bash
+yarn watch
+```
+
+```bash
+yarn start
+```
+
+```bash
+yarn build
 ```
 
 ## Credits

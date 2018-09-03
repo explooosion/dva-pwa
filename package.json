@@ -1,0 +1,42 @@
+{
+  "version": "0.0.1",
+  "description": "a PWA starter powered by dva and pwa",
+  "scripts": {
+    "build": "pwa export",
+    "start": "sirv build -s",
+    "watch": "pwa watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/explooosion/dva-pwa.git"
+  },
+  "keywords": [
+    "dva",
+    "react",
+    "pwa",
+    "boilerplate"
+  ],
+  "author": "Robby <ta7382@gmail.com> (https://github.com/explooosion)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/explooosion/dva-pwa/issues"
+  },
+  "homepage": "https://github.com/explooosion/dva-pwa#readme",
+  "dependencies": {
+    "dva": "^2.4.0",
+    "ganalytics": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "sirv-cli": "latest"
+  },
+  "devDependencies": {
+    "@pwa/cli": "latest",
+    "@pwa/preset-react": "latest",
+    "eslint": "^4.14.0",
+    "eslint-config-umi": "^0.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.6.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0"
+  }
+}
