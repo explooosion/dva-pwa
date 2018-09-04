@@ -2,3 +2,5 @@ title: dva-pwa
 encoding: UTF-8
 baseurl: "docs"
 timezone: AsiaTaiwan
+
+theme: jekyll-theme-slate
