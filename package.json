@@ -4,7 +4,10 @@
   "scripts": {
     "build": "pwa export",
     "start": "sirv build -s",
-    "watch": "pwa watch"
+    "watch": "pwa watch",
+    "stylelint": "stylelint src/**/*.scss --syntax scss --fix",
+    "eslint": "eslint --ext .js src",
+    "lint": "npm run stylelint && npm run eslint"
   },
   "repository": {
     "type": "git",
@@ -32,11 +35,30 @@
   "devDependencies": {
     "@pwa/cli": "latest",
     "@pwa/preset-react": "latest",
-    "eslint": "^4.14.0",
-    "eslint-config-umi": "^0.1.1",
-    "eslint-plugin-flowtype": "^2.34.1",
-    "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0"
-  }
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-dva-hmr": "^0.4.1",
+    "babel-plugin-import": "^1.8.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-babel": "^5.1.0",
+    "eslint-plugin-compat": "^2.5.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.9.3",
+    "redbox-react": "^1.6.0",
+    "sass-loader": "^7.1.0",
+    "stylelint": "^9.5.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-sass-guidelines": "^5.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "3.3.0"
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
