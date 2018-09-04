@@ -5,7 +5,6 @@
     "build": "pwa export",
     "start": "sirv build -s",
     "watch": "pwa watch",
-    "docs": "pwa export -o docs",
     "stylelint": "stylelint src/**/*.scss --syntax scss --fix",
     "eslint": "eslint --ext .js src",
     "lint": "npm run stylelint && npm run eslint"
