@@ -5,7 +5,7 @@ import style from './index.css';
 class Window extends React.Component {
   render() {
     return (
-      <div className={style.window_wrap} >
+      <div className={style['window-wrap']}>
         <div className={style.window}>
           <img src={VIDEO} alt="recording" />
         </div>

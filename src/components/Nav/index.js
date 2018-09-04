@@ -8,13 +8,13 @@ class Nav extends React.Component {
 
   componentDidMount() {
     addEventListener('scroll', ev => {
-      let stuck = window.pageYOffset > 0;
+      const stuck = window.pageYOffset > 0;
       this.setState({ stuck });
     }, { passive: true });
   }
 
   shouldComponentUpdate(_, nxt) {
-    let now = this.state;
+    const now = this.state;
     return now.stuck !== nxt.stuck;
   }
 
@@ -28,8 +28,8 @@ class Nav extends React.Component {
       <nav className={cls}>
         <span />
         <ul>
-          <li><a href="https://github.com/lukeed/pwa" className={style.link_external}>GitHub</a></li>
-          <li><a href="https://github.com/lukeed/pwa" className={style.link_external}>Documentation</a></li>
+          <li><a href="https://github.com/lukeed/pwa" className={style['link-external']}>GitHub</a></li>
+          <li><a href="https://github.com/lukeed/pwa" className={style['link-external']}>Documentation</a></li>
         </ul>
       </nav>
     );

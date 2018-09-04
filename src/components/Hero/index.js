@@ -12,10 +12,6 @@ class Hero extends React.Component {
     this.state = {};
   }
 
-  setShapes = elem => {
-    this.shapes = elem;
-  }
-
   componentDidMount() {
     const elem = this.shapes;
     const ww = elem.clientWidth;
@@ -25,24 +21,24 @@ class Hero extends React.Component {
 
     function Particle() {
       let y = wh;
-      let dir = Math.random() > 0.5 ? -1 : 1;
-      let fric = Math.random() * 3 + 1;
-      let scale = Math.random() + 0.5;
-      let sine = Math.random() * 60;
-      let x = ww * Math.random();
+      const dir = Math.random() > 0.5 ? -1 : 1;
+      const fric = Math.random() * 3 + 1;
+      const scale = Math.random() + 0.5;
+      const sine = Math.random() * 60;
+      const x = ww * Math.random();
 
-      let item = document.createElement('span');
-      item.className = style.shape + ' ' + SHAPES[SHAPES.length * Math.random() | 0];
+      const item = document.createElement('span');
+      item.className = `${style.shape} ${SHAPES[SHAPES.length * Math.random() | 0]}`;
       item.style.transform = `translate3d(${x}px,${y}px,0) scale(${scale})`;
       elem.appendChild(item);
 
-      let height = item.clientHeight;
-      let target = -1 * height;
+      const height = item.clientHeight;
+      const target = -1 * height;
 
       return () => {
         y -= fric;
-        let rot = dir * Math.abs(y + height);
-        let left = x + Math.sin(y * Math.PI / steps) * sine;
+        const rot = dir * Math.abs(y + height);
+        const left = x + Math.sin(y * Math.PI / steps) * sine;
         item.style.transform = `translate3d(${left}px,${y}px,0) scale(${scale}) rotate(${rot}deg)`;
         return (y > target) || item.remove();
       }
@@ -50,9 +46,13 @@ class Hero extends React.Component {
 
     let last = 0;
     let running = 1;
-    let particles = [];
+    const particles = [];
 
-    window.onblur = window.onfocus = () => {
+    window.onblur = () => {
+      running = document.hasFocus();
+    };
+
+    window.onfocus = () => {
       running = document.hasFocus();
     };
 
@@ -63,6 +63,7 @@ class Hero extends React.Component {
         particles.push(Particle());
       }
       while (len--) {
+        // eslint-disable-next-line
         particles[len]() || particles.splice(len, 1);
       }
       requestAnimationFrame(update);
@@ -73,6 +74,10 @@ class Hero extends React.Component {
 
   shouldComponentUpdate() {
     return false;
+  }
+
+  setShapes = elem => {
+    this.shapes = elem;
   }
 
   render() {
